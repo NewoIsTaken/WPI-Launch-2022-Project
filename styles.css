@@ -1,0 +1,31 @@
+.main {
+    background: #CE5937;
+    background: -moz-linear-gradient(left, #CE5937 0%, #1C6EA4 50%, #C59237 100%);
+    background: -webkit-linear-gradient(left, #CE5937 0%, #1C6EA4 50%, #C59237 100%);
+    background: linear-gradient(to right, #CE5937 0%, #1C6EA4 50%, #C59237 100%);
+}
+
+.menuStyle {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.openPage {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
+}
+
+.tableFormat {
+    align-items: center;
+    border: 1;
+    width: 500px;
+    padding: 1;
+}
+
+.terminalOutputstyle {
+    font-size: medium;
+    color: green;
+    background-color: black;
+
+}
