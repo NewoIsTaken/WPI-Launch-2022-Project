@@ -9,6 +9,18 @@
 
 
 </head>
+<select name="clr" onchange="document.bgColor=this.options[this.selectedIndex].value" size="1">
+    <br>
+    <option value="black">black
+        <option value="orange">orange
+            <option value="flamingred">fuschia
+                <option value="lightyellow">light yellow
+                    <option value="green">green
+                        <option value="cyan">cyan
+                            <option value="yellow">yellow
+                                <option value="red">red
+                                    <option value="white">white</option>
+</select>&nbsp;&nbsp;Select Background Color
 <body>
     <h1 class="menuStyle">
         <span class="menuStyle">Docker Management Platform</span>
