@@ -17,7 +17,9 @@ function list(ip) {
             nameCell.innerText = response.i.Names[0];
             statusCell.innerText = response.i.State;
 
-            actionCell.innerHTML = "";
+            actionCell.innerHTML = `<button class="btn btn-success">Start</button>
+            <button class="btn btn-danger">Stop</button>
+            <button class="btn btn-danger">Delete</button>`;
 
         }
     }
