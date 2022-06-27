@@ -34,7 +34,7 @@
             </tr>
         </tbody>
     </table>
-    <p><code><a href="/terminal.html" onclick="window.open(this.href, 'TerminalOutputView', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=yes,scrollbars=no,dependent=no'); return false;">Open</a></code></p>
+    <p><code><a href="/home/glawson1/WPI-Launch-2022-Project/client/index.html" onclick="window.open(this.href, 'TerminalOutputView', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=yes,scrollbars=no,dependent=no'); return false;">Open</a></code></p>
     <code class="terminalOutputstyle" id="terminalOutput"> Terminal Output </code>
 
     <table id="instance-list">
