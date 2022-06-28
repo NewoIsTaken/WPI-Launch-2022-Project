@@ -11,3 +11,7 @@ h1 {
     display: inherit;
     margin: 1em auto;
 }
+
+#create {
+    margin: 1em 0;
+}

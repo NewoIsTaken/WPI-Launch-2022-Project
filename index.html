@@ -15,6 +15,8 @@
     <div class="container">
         <h1>Docker Management Platform</h1>
 
+        <button class="btn btn-primary" id="create">Create</button>
+
         <table id="instance-list">
             <tbody>
                 <tr>
@@ -24,14 +26,14 @@
                     <th id="action">Action</th>
                 </tr>
                 <tr>
-                    <td>39281012</td>
+                    <td>69420</td>
                     <td>Your mother</td>
                     <td>Running</td>
                     <td>
-                        <button class="btn btn-success" onclick="start('127.0.0.1', )">Start</button>
-                        <button class="btn btn-danger">Stop</button>
+                        <button class="btn btn-success" onclick="start('127.0.0.1', 69420)">Start</button>
+                        <button class="btn btn-danger" onclick="stop('127.0.0.1', 69420)">Stop</button>
                         <a class="btn btn-primary" href='./client/index.html'>SSH</a>
-                        <button class="btn btn-danger">Delete</button>
+                        <button class="btn btn-danger" onclick="deleteInstance('127.0.0.1', 69420)">Delete</button>
                     </td>
                 </tr>
             </tbody>
@@ -46,10 +48,10 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalLabel">Error</h5>
+                        <h5 class="modal-title" id="modal-title">Error</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" id="modal-text">
                         An error occured while retrieving the list of instances. Please make sure that the Docker server
                         is on.<br>Please refresh to try again.
                     </div>

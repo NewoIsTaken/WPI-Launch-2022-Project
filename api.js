@@ -34,15 +34,27 @@ function list(ip) {
 }
 
 function start(ip, id) {
-
+    const modalText = document.getElementById("modal-text");
+    const modalTitle = document.getElementById("modal-title");
+    modalText.innerText = id + " successfully started!";
+    modalTitle.innerText = "Start successful!";
+    modal.toggle();
 }
 
 function stop(ip, id) {
-
+    const modalText = document.getElementById("modal-text");
+    const modalTitle = document.getElementById("modal-title");
+    modalText.innerText = id + " successfully stopped!";
+    modalTitle.innerText = "Stop successful!";
+    modal.toggle();
 }
 
 function deleteInstance(ip, id) {
-
+    const modalText = document.getElementById("modal-text");
+    const modalTitle = document.getElementById("modal-title");
+    modalText.innerText = id + " successfully deleted!";
+    modalTitle.innerText = "Delete successful!";
+    modal.toggle();
 }
 
 function ipToInt(ip) {
