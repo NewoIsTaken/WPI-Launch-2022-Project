@@ -6,3 +6,8 @@ h1 {
 #instance-list {
     width: 100%;
 }
+
+.spinner-border {
+    display: inherit;
+    margin: 1em auto;
+}

@@ -31,11 +31,16 @@
 *   other features.
 */
 
-html, body { 
+html,
+body {
     overflow: hidden;
     overflow: -moz-scrollbars-none;
     -ms-overflow-style: none;
-    background-color: #000;
+    background-image: url("wallpaper.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    height: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -154,7 +159,7 @@ html, body {
     overflow-x: hidden;
     padding-top: 60px;
     transition: .5s;
-    font-family: courier-new,courier,monospace;
+    font-family: courier-new, courier, monospace;
     font-size: 20px;
     color: #818181;
     opacity: .4
@@ -179,8 +184,8 @@ html, body {
 }
 
 .sidenav .netTraffic .leftarrow {
-	padding-left: 25px;
-	color: #4e9a06;
+    padding-left: 25px;
+    color: #4e9a06;
 }
 
 .sidenav .rightarrow {
@@ -189,9 +194,9 @@ html, body {
     padding: 2px 25px 0 0
 }
 
-.sidenav .netTraffic .rightarrow{
-	padding-right: 35px;
-	color: #c4a000;
+.sidenav .netTraffic .rightarrow {
+    padding-right: 35px;
+    color: #c4a000;
 }
 
 .sidenav .middle {
@@ -219,7 +224,8 @@ html, body {
     border: 0
 }
 
-.offcanvas a:focus,.sidenav a:hover {
+.offcanvas a:focus,
+.sidenav a:hover {
     color: #f1f1f1
 }
 
@@ -347,16 +353,17 @@ input[type=number].large {
     border-bottom: solid 2px #aaa
 }
 
-input::-webkit-inner-spin-button,input::-webkit-outer-spin-button {
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
     -webkit-appearance: none
 }
 
 .hostKeyImg {
-	width: 235px;
-	font-size: 14px;
-	white-space: pre;
-	text-align: center;
-	display: block;
+    width: 235px;
+    font-size: 14px;
+    white-space: pre;
+    text-align: center;
+    display: block;
     font-family: monospace !important;
     height: 320px;
 }

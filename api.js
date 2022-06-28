@@ -17,21 +17,35 @@ function list(ip) {
             nameCell.innerText = response.i.Names[0];
             statusCell.innerText = response.i.State;
 
-            actionCell.innerHTML = `<button class="btn btn-success">Start</button>
-            <button class="btn btn-danger">Stop</button>
-            <button class="btn btn-danger">Delete</button>`;
+            ipInt = ipToInt(ip);
+
+            actionCell.innerHTML = `<button class="btn btn-success" onclick="start(` + ipInt + `, ` + response.i.Id + `)">Start</button>
+            <button class="btn btn-danger" onclick="stop(` + ipInt + `, ` + response.i.Id + `)">Stop</button>
+            <a href="./" class="btn btn-danger">SSH</a>
+            <button class="btn btn-danger" onclick="delete(` + ipInt + `, ` + response.i.Id + `)">Delete</button>`;
 
         }
     }
     xhr.send();
 }
 
-let xhr = new XMLHttpRequest();
-xhr.open("POST", "api.php");
+function ipToInt(ip) {
+    var parts = ip.split(".");
+    var res = 0;
 
-xhr.onload = () => console.log(xhr.responseText);
+    res += parseInt(parts[0], 10) << 24;
+    res += parseInt(parts[1], 10) << 16;
+    res += parseInt(parts[2], 10) << 8;
+    res += parseInt(parts[3], 10);
 
-let data = `{
-    "container": ___,
-    "action":
-}`;
+    return res;
+}
+
+function intToIP(int) {
+    var part1 = int & 255;
+    var part2 = ((int >> 8) & 255);
+    var part3 = ((int >> 16) & 255);
+    var part4 = ((int >> 24) & 255);
+
+    return part4 + "." + part3 + "." + part2 + "." + part1;
+}

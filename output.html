@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Terminal Viewer</title>
+    <meta name="View the output of your terminal from the browser" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="terminal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<button type="button" class="btn btn-info" onclick="reloadPage()">Refresh</button>
+<h1 class="text">Docker Command Logs: </h1>
+<p class="text">Reload for updated logging</p>
+&nbsp;
+&nbsp;
+<p id="outputField"></p>
+
+
+<body class="body">
+
+    <script>
+
+        let file = "~/.bash_history"
+        let reader = new FileReader();
+        let text = reader.readAsText(file);
+        const output = document.getElementById("outputField");
+        output.textContent = text;
+
+        function reloadPage() {
+            location.reload();
+        }
+
+    </script>
+</body>
+
+</html>
