@@ -11,6 +11,11 @@ function reloadPage() {
 
 function changeFile() {
     let new_file = document.getElementById('CHANGED_FILE').value;
+    console.log(new_file);
     let new_text = reader.readAsText(new_file)
     output.textContent= new_text;
+}
+
+function createCall() {
+    
 }
