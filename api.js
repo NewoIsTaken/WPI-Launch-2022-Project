@@ -33,6 +33,16 @@ function list(ip) {
     xhr.send();
 }
 
+function create(ip, name, image) {
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", ip + "/v1.41/containers/create?name=" + name);
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState == 4 && xhr.status == 201) {
+
+        }
+    }
+}
+
 function start(ip, id) {
     const modalText = document.getElementById("modal-text");
     const modalTitle = document.getElementById("modal-title");
