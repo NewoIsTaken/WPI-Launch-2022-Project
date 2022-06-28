@@ -11,6 +11,7 @@
     <title>Terminal Viewer</title>
     <meta name="View the output of your terminal from the browser" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta>
     <link rel="stylesheet" href="terminal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -36,10 +37,14 @@
 </head>
 <button type="button" class="btn btn-success" onclick="reloadPage()">Reload</button>
 <h1 class="text">Docker Command Logs: </h1>
-<p class="text">Reload for updated logging</p>
+<p class="text">Reload for updated logging!</p>
 &nbsp;
 &nbsp;
-<p id="outputField"></p>
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+<i id="outputField" class="text"></i>
 
 
 <body class="body">
@@ -48,7 +53,8 @@
 
         let file = "~/.bash_history"
         let reader = new FileReader();
-        let text = reader.readAsText(file);
+        // let text = reader.readAsText(file);
+        text = "whto['u 43ht[3ou4ht3ou4ht34ui9phtpiu24tyi45ty395 p3yp9 r46tp8"
         const output = document.getElementById("outputField");
         output.textContent = text;
 
