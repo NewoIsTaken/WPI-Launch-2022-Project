@@ -1,32 +1,48 @@
 function list(ip) {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", ip + "/v1.41/containers/json?all=true");
-    xhr.onload = () => {
-        const response = JSON.parse(xhr.response);
-        const instanceList = document.getElementById("instance-list");
+    xhr.onreadystatechange = () => {
+        if (xhr.readystate == 4 && xhr.status == 200) {
+            const response = JSON.parse(xhr.response);
+            const instanceList = document.getElementById("instance-list");
 
-        for (let i = 0; i < response.length; i++) {
-            const row = instanceList.insertRow();
+            for (let i = 0; i < response.length; i++) {
+                const row = instanceList.insertRow();
 
-            let idCell = row.insertCell();
-            let nameCell = row.insertCell();
-            let statusCell = row.insertCell();
-            let actionCell = row.insertCell();
+                let idCell = row.insertCell();
+                let nameCell = row.insertCell();
+                let statusCell = row.insertCell();
+                let actionCell = row.insertCell();
 
-            idCell.innerText = response.i.Id;
-            nameCell.innerText = response.i.Names[0];
-            statusCell.innerText = response.i.State;
+                idCell.innerText = response.i.Id;
+                nameCell.innerText = response.i.Names[0];
+                statusCell.innerText = response.i.State;
 
-            ipInt = ipToInt(ip);
+                ipInt = ipToInt(ip);
 
-            actionCell.innerHTML = `<button class="btn btn-success" onclick="start(` + ipInt + `, ` + response.i.Id + `)">Start</button>
+                actionCell.innerHTML = `<button class="btn btn-success" onclick="start(` + ipInt + `, ` + response.i.Id + `)">Start</button>
             <button class="btn btn-danger" onclick="stop(` + ipInt + `, ` + response.i.Id + `)">Stop</button>
-            <a href="./" class="btn btn-danger">SSH</a>
-            <button class="btn btn-danger" onclick="delete(` + ipInt + `, ` + response.i.Id + `)">Delete</button>`;
+            <a href="./client" class="btn btn-danger">SSH</a>
+            <button class="btn btn-danger" onclick="deleteInstance(` + ipInt + `, ` + response.i.Id + `)">Delete</button>`;
 
+            }
+
+            return true;
         }
     }
     xhr.send();
+}
+
+function start(ip, id) {
+
+}
+
+function stop(ip, id) {
+
+}
+
+function deleteInstance(ip, id) {
+
 }
 
 function ipToInt(ip) {
