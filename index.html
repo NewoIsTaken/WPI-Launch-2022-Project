@@ -17,7 +17,7 @@
 
         <a class="btn btn-primary" id="create" href="./create.html?ip=127.0.0.1">Create</a>
 
-        <table id="instance-list">
+        <table id="instance-list" class="table table-striped table-hover">
             <tbody>
                 <tr>
                     <th>ID</th>
@@ -33,7 +33,8 @@
                         <button class="btn btn-success" onclick="start('127.0.0.1', 69420)">Start</button>
                         <button class="btn btn-danger" onclick="stop('127.0.0.1', 69420)">Stop</button>
                         <a class="btn btn-primary" href='./client/index.html'>SSH</a>
-                        <a type="button" class="btn btn-dark" onclick="window.open('./output.html','Terminal','width=1200,height=800')">Log Platform</a>
+                        <a type="button" class="btn btn-dark"
+                            onclick="window.open('./output.html','Terminal','width=1200,height=800')">Log Platform</a>
                         <button class="btn btn-danger" onclick="deleteInstance('127.0.0.1', 69420)">Delete</button>
                     </td>
                 </tr>
