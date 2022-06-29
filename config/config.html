@@ -25,23 +25,57 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Management Platform</a>
+                    <a class="nav-link active" aria-current="page" href="../">Management Platform</a>
                   </li>
 
                 </ul>
+
                 <form class="d-flex" role="search">
-                  <input id="ip_grab"  class="form-control me-2" type="search" placeholder="Docker Server IP" aria-label="Search">
-                  <button class="btn btn-outline-success" onclick="pingServer()" type="submit">Store</button>
+                    <input id="port_grab"  class="form-control me-2" type="search" placeholder="Docker Server Port" aria-label="Search">
+                    <button class="btn btn-outline-success" onclick="pingServer()" type="submit" id="store-button">Store</button>
                 </form>
               </div>
             </div>
           </nav>
-          <div class = "container">
+          <div class = "container" class = "mr-1">
             <div class="alert alert-primary" role="alert" id="server_ip">
-                Provide a Docker Server IP
+                Provide a Docker Server Port
               </div>
           </div>
- 
+          <h3>Request Result: </h3>
+          <code id="request_output"></code>
+          
+
+          <!-- this confirms that a users wants to refresh -->
+          <div class="container">
+          <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Refresh
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Refresh Page</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        By refreshing the Server Operations module, you will delete any requests pending or results completed.
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Return to Safety</button>
+                    <button type="button" class="btn btn-primary" onclick="location.reload()">Understood</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -49,5 +83,11 @@
         <script src="config.js" async defer></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+        <script>
+            const button = document.getElementById("store-button");
+            button.addEventListener("click", () => {
+                event.preventDefault();
+            })
+        </script>
     </body>
 </html>

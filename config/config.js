@@ -1,15 +1,22 @@
 
 
 function pingServer() {
-    let ip = document.getElementById("ip_grab").value;
-    console.log("Server IP logged as:", ip);
-    document.getElementById("server_ip").innerText = ("Server IP set as: " + ip);
-   // const Http = new XMLHttpRequest();
-   // const url='https://jsonplaceholder.typicode.com/posts';
-   // Http.open("GET", url);
-   // Http.send();
+    let port = document.getElementById("port_grab").value;
+    console.log("Server IP/Port logged as:", port);
+    document.getElementById("server_ip").innerText = ("Server Port set as: " + port);
+    const Http = new XMLHttpRequest();
+    const url=(port);
+    console.log('New Request Sent To:', port);
+    Http.open("GET", url);
+    Http.send();
 
-  //  Http.onreadystatechange = (e) => {
-   // console.log(Http.responseText)
+    Http.onreadystatechange = (e) => {
+    const responce = Http.responseText;
+    document.getElementById("request_output").innerText = (responce);
+    console.log(responce);
+    let success = responce.includes("OK");
+
     }
 
+
+ }
