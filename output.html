@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="./">Docker Management Platform <span class="badge badge-secondary">Beta</span></a>
+            <a class="navbar-brand" href="./">Docker Management Platform -  <span class="badge badge-secondary">Beta</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -35,12 +35,7 @@
                 </li>
                 <form class="form-inline">
 
-                  <div class="form-group mx-sm-3 mb-2">
-                    <label for="inputPassword2" class="sr-only">File to View</label>
-                    <input type="text" class="form-control" id="CHANGED_FILE" placeholder="~/.bash_history">
-                  </div>
-                  <button type="submit" class="btn btn-primary mb-2" onclick="changeFile()">Switch viewing file</button>
-                </form>
+                  <button type="button" class="btn btn-success" onclick="createNewUser()">Init Logs</button>
 
               </ul>
             </div>
@@ -81,14 +76,14 @@
 &nbsp;
 &nbsp;
 &nbsp;
-<i id="outputField" class="text"></i>
 
+<code class="text" id="output_area"></code>
 
 <body class="body">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="terminal.js">
+  <script src="terminal.js">
 
 
 
