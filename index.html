@@ -25,19 +25,6 @@
                     <th>State</th>
                     <th id="action">Action</th>
                 </tr>
-                <tr>
-                    <td>69420</td>
-                    <td>Your mother</td>
-                    <td>Running</td>
-                    <td>
-                        <button class="btn btn-success" onclick="start('127.0.0.1', 69420)">Start</button>
-                        <button class="btn btn-danger" onclick="stop('127.0.0.1', 69420)">Stop</button>
-                        <a class="btn btn-primary" href='./client/index.html'>SSH</a>
-                        <a type="button" class="btn btn-dark"
-                            onclick="window.open('./output.html','Terminal','width=1200,height=800')">Log Platform</a>
-                        <button class="btn btn-danger" onclick="deleteInstance('127.0.0.1', 69420)">Delete</button>
-                    </td>
-                </tr>
             </tbody>
         </table>
 
@@ -71,14 +58,34 @@
     <script src="api.js"></script>
     <script>
         const modal = new bootstrap.Modal(document.getElementById('modal'));
-        setTimeout(function () {
-            const loadingIcon = document.getElementById("loadingIcon");
-            if (window.location.search.substr(1) == "pleasework" || list("127.0.0.1")) {
-                loadingIcon.style.display = "none";
-            } else {
-                modal.toggle();
+        const loadingIcon = document.getElementById("loadingIcon");
+        if (window.location.search.substr(1) == "pleasework" || list("127.0.0.1")) {
+            if (window.location.search.substr(1)) {
+                const instanceList = document.getElementById("instance-list");
+                const row = instanceList.insertRow();
+
+                let idCell = row.insertCell();
+                let nameCell = row.insertCell();
+                let statusCell = row.insertCell();
+                let actionCell = row.insertCell();
+
+                idCell.innerText = 69420;
+                nameCell.innerText = "Your mother";
+                statusCell.innerText = "Running";
+
+                ipInt = ipToInt("127.0.0.1");
+
+                actionCell.innerHTML = `<button class="btn btn-success" onclick="start(` + ipInt + `, 69420)">Start</button>
+            <button class="btn btn-danger" onclick="stop(` + ipInt + `, 69420)">Stop</button>
+            <a class="btn btn-primary" href='./client/index.html'>SSH</a>
+            <a type="button" class="btn btn-dark"
+                            onclick="window.open('./output.html','Terminal','width=1200,height=800')">Logs</a>
+            <button class="btn btn-danger" onclick="deleteInstance(` + ipInt + `, 69420)">Delete</button>`;
             }
-        }, 1000);
+            loadingIcon.style.display = "none";
+        } else {
+            modal.toggle();
+        }
         function closeModal() {
             modal.toggle();
         }
