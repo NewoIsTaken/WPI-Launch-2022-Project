@@ -30,12 +30,18 @@
 
                 </ul>
                 <form class="d-flex" role="search">
-                  <input id="ip_grab"  class="form-control me-2" type="search" placeholder="Docker Server IP Address" aria-label="Search">
+                  <input id="ip_grab"  class="form-control me-2" type="search" placeholder="Docker Server IP" aria-label="Search">
                   <button class="btn btn-outline-success" onclick="pingServer()" type="submit">Store</button>
                 </form>
               </div>
             </div>
           </nav>
+          <div class = "container">
+            <div class="alert alert-primary" role="alert" id="server_ip">
+                Provide a Docker Server IP
+              </div>
+          </div>
+ 
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
