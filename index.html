@@ -15,7 +15,10 @@
     <div class="container">
         <h1>Docker Management Platform</h1>
 
-        <a class="btn btn-primary" id="create" href="./create.html?ip=127.0.0.1">Create</a>
+        <div class="col">
+            <a class="btn btn-primary" id="create" href="./create.html?ip=127.0.0.1">Create</a>
+            <a type="button" class="btn btn-dark" href="./config/config.html">Server Operations</a>
+        </div>
 
         <table id="instance-list" class="table table-striped table-hover">
             <tbody>
@@ -78,8 +81,6 @@
                 actionCell.innerHTML = `<button class="btn btn-success" onclick="start(` + ipInt + `, 69420)">Start</button>
             <button class="btn btn-danger" onclick="stop(` + ipInt + `, 69420)">Stop</button>
             <a class="btn btn-primary" href='./client/index.html'>SSH</a>
-            <a type="button" class="btn btn-dark"
-                            href="./config/config.html">Server Operations</a>
             <a class="btn btn-dark" href="/advanced.html?ip=` + ipInt + `&id=69420">Advanced</a>
             <button class="btn btn-danger" onclick="deleteInstance(` + ipInt + `, 69420)">Delete</button>`;
             }
